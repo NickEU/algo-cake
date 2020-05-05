@@ -8,11 +8,11 @@ def merge_ranges(meetings):
           and meeting[1] >= result[0]):
                 results[idx] = (meeting[0], result[1])
 
-          if (meeting[0] > result[0] and meeting[1] > result[1]
+          elif (meeting[0] > result[0] and meeting[1] > result[1]
           and meeting[0] <= result[1]):
                 results[idx] = (result[0], meeting[1])
 
-          if (meeting[0] < result[0] and meeting[1] > result[1]):
+          elif (meeting[0] < result[0] and meeting[1] > result[1]):
                 results[idx] = (meeting[0], meeting[1])
 
           if not ((meeting[0] < result[0] and meeting[1] < result[0]
