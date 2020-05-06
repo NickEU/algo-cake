@@ -9,16 +9,12 @@ def merge_ranges(input):
     meetings.sort(key=sortFunc)
     result = [meetings[0]]
     
-    for idx, currEl in enumerate(meetings):
-        lastEl = result[len(result) - 1]
-        if currEl[0] <= lastEl[1]:
-            start = lastEl[0]
-            end = lastEl[1]
-            if currEl[1] > lastEl[1]:
-                end = currEl[1]
-            result[len(result) - 1] = (start, end)
+    for currStart, currEnd in meetings[1:]:
+        lastEl = result[-1]
+        if currStart <= lastEl[1]:
+            result[-1] = (lastEl[0], max(currEnd, lastEl[1]))
         else: 
-            result.append(currEl)
+            result.append((currStart, currEnd))
     
     return result
 
