@@ -11,6 +11,7 @@ def reverseLetters(inputList):
     return inputList
 
 
-print(reverseLetters(['a', 'b', 'c', 'd']) == ['d', 'c', 'b', 'a'])
-print(reverseLetters(['a']) == ['a'])
-print(reverseLetters(['k', 'l', 'm', 'n', 'o']) == ['o', 'n', 'm', 'l', 'k'])
+if __name__ == "__main__":
+    print(reverseLetters(['a', 'b', 'c', 'd']) == ['d', 'c', 'b', 'a'])
+    print(reverseLetters(['a']) == ['a'])
+    print(reverseLetters(['k', 'l', 'm', 'n', 'o']) == ['o', 'n', 'm', 'l', 'k'])
