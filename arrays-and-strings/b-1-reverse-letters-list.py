@@ -1,6 +1,6 @@
 # Write a function that takes a list of characters
 # and reverses the letters in place
-def reverse_letters(inputList):
+def reverseLetters(inputList):
     midPointIdx = len(inputList) / 2 
     for currIdx, currChar in enumerate(inputList):
         if midPointIdx <= currIdx:
@@ -12,6 +12,6 @@ def reverse_letters(inputList):
     return inputList
 
 
-print(reverse_letters(['a', 'b', 'c', 'd']) == ['d', 'c', 'b', 'a'])
-print(reverse_letters(['a']) == ['a'])
-print(reverse_letters(['k', 'l', 'm', 'n', 'o']) == ['o', 'n', 'm', 'l', 'k'])
+print(reverseLetters(['a', 'b', 'c', 'd']) == ['d', 'c', 'b', 'a'])
+print(reverseLetters(['a']) == ['a'])
+print(reverseLetters(['k', 'l', 'm', 'n', 'o']) == ['o', 'n', 'm', 'l', 'k'])
