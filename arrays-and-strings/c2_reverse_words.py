@@ -1,4 +1,3 @@
-from b2_reverse_letters_list import reverseLetters
 # Write a function reverseWords() that 
 # takes a message as a list of characters
 # and reverses the order of the words in place.
@@ -7,22 +6,18 @@ from b2_reverse_letters_list import reverseLetters
 # assume the message contains only letters and spaces,
 # and all words are separated by one space.
 def reverseWords(message):
-    result = reverseLetters(message)
-    result.append(' ')
-    word = ''
-    wordStartIdx = 0
-    for idx, el in enumerate(message):
-        if el != ' ':
-            word += el
-        else:
-            wordLen = len(word)
-            reverseWord(result, wordStartIdx, wordStartIdx + wordLen - 1)
-            wordStartIdx += wordLen + 1
-            word = ''
-    result.pop()  
+    result = message
+    reverseList(result, 0, len(result) - 1)
+    wordStartIdx = idx = 0
+    while idx <= len(result):
+        if len(result) == idx or result[idx] == ' ':
+            reverseList(result, wordStartIdx, idx - 1)
+            wordStartIdx = idx + 1
+        idx += 1
+    print(result)
     return result
 
-def reverseWord(list, wordStartPos, wordEndPos):
+def reverseList(list, wordStartPos, wordEndPos):
     while wordStartPos < wordEndPos:
         list[wordStartPos], list[wordEndPos] \
         = list[wordEndPos], list[wordStartPos]
