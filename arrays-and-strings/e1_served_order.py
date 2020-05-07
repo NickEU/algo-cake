@@ -26,7 +26,13 @@ def check_service(takeOutOrders, dineInOrders, servedOrders):
             dineInIdx += 1
         else:
             return False
-    return True
+    if takeOutIdx == len(takeOutOrders) and dineInIdx == len(dineInOrders):
+        #all orders were served
+        return True
+    else:
+        #orders were served in the correct order
+        #but some of the orders weren't fulfilled
+        return False
 
 
 
@@ -35,4 +41,5 @@ print(check_service([1, 3, 5], [2, 4, 6, 9], [1, 2, 3, 5, 4, 6, 9]) == True)
 print(check_service([1, 3, 5, 7, 11], [2, 4, 6, 9], [1, 2, 3, 5, 4, 6, 9, 7, 11]) == True)
 print(check_service([1, 3, 5, 7, 11], [], [1, 3, 5, 7, 11]) == True)
 print(check_service([], [2, 4, 6], [2, 6, 4]) == False)
+print(check_service([3, 5], [2, 4, 6], [2, 4, 6, 3]) == False)
 print(check_service([1, 3, 5], [2, 4, 6], [1, 2, 3, 5, 4, 6]) == True)

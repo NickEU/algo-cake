@@ -21,9 +21,9 @@ def check_service(takeOutOrders, dineInOrders, servedOrders):
     if (len(servedOrders) == 0):
         return True
 
-    if len(takeOutOrders) > 0 and takeOutOrders[0] == servedOrders[0]:
+    if len(takeOutOrders) and takeOutOrders[0] == servedOrders[0]:
         return check_service(takeOutOrders[1:], dineInOrders, servedOrders[1:])
-    elif len(dineInOrders) > 0 and dineInOrders[0] == servedOrders[0]:
+    elif len(dineInOrders) and dineInOrders[0] == servedOrders[0]:
         return check_service(takeOutOrders, dineInOrders[1:], servedOrders[1:])
     else:
         return False
