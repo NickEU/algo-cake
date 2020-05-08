@@ -26,14 +26,3 @@ def can_turn_into_palindrome(inputStr):
                 return False
 
     return True
-
-
-print(can_turn_into_palindrome('civic') == True)
-print(can_turn_into_palindrome('c') == True)
-print(can_turn_into_palindrome('livci') == False)
-print(can_turn_into_palindrome('livcilvc') == True)
-print(can_turn_into_palindrome('livcilvd') == False)
-print(can_turn_into_palindrome('civil') == False)
-print(can_turn_into_palindrome('ivicc') == True)
-print(can_turn_into_palindrome('cccvv') == True)
-
