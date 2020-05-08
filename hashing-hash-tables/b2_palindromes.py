@@ -12,6 +12,5 @@ def can_turn_into_palindrome(inputStr):
         else:
             oddNumbers.add(char)
 
-    return len(oddNumbers) == 1 \
-    if len(inputStr) % 2 == 1 else len(oddNumbers) == 0
+    return len(oddNumbers) <= 1
 
