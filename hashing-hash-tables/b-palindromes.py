@@ -33,4 +33,5 @@ print(can_turn_into_palindrome('livcilvc') == True)
 print(can_turn_into_palindrome('livcilvd') == False)
 print(can_turn_into_palindrome('civil') == False)
 print(can_turn_into_palindrome('ivicc') == True)
+print(can_turn_into_palindrome('cccvv') == True)
 
