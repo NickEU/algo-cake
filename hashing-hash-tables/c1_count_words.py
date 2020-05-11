@@ -7,7 +7,7 @@ def count_words(inputStr):
     delimeters = ('.', '?', '!', ':', ',', ' ', '(', ')', '"')
     result = {}
     wordIsOver = False
-    for idx, char in enumerate(inputStr):
+    for char in inputStr:
         if char in delimeters:
             wordIsOver = True
         else:
@@ -23,11 +23,11 @@ def count_words(inputStr):
     return result
 
 def insert_word(result, word):
-    lwrCasedWord = word.lower()
-    if lwrCasedWord in result:
-        result[lwrCasedWord] += 1
+    word = word.lower()
+    if word in result:
+        result[word] += 1
     else:
-        result[lwrCasedWord] = 1
+        result[word] = 1
 
 
 
