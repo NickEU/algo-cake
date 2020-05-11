@@ -3,14 +3,14 @@
 
 #You can assume the input string only contains lowercase letters.
 
-def can_turn_into_palindrome(inputStr):
-    oddNumbers = set()
+def can_turn_into_palindrome(input_str):
+    odd_numbers = set()
 
-    for char in inputStr:
-        if char in oddNumbers:
-            oddNumbers.remove(char)
+    for char in input_str:
+        if char in odd_numbers:
+            odd_numbers.remove(char)
         else:
-            oddNumbers.add(char)
+            odd_numbers.add(char)
 
-    return len(oddNumbers) <= 1
+    return len(odd_numbers) <= 1
 

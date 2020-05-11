@@ -3,25 +3,25 @@
 
 #You can assume the input string only contains lowercase letters.
 
-def can_turn_into_palindrome(inputStr):
-    if len(inputStr) % 2 == 1:
-        canHaveCharWithoutPair = True
+def can_turn_into_palindrome(input_str):
+    if len(input_str) % 2 == 1:
+        can_have_char_without_pair = True
     else:
-        canHaveCharWithoutPair = False
+        can_have_char_without_pair = False
 
-    charsParityIsEven = {}
+    chars_parity_is_even = {}
     #in this one we're tracking if a char is encountered even
     #or odd number of times instead of counting the occurrences
-    for char in inputStr:
-        if char in charsParityIsEven:
-            charsParityIsEven[char] = True
+    for char in input_str:
+        if char in chars_parity_is_even:
+            chars_parity_is_even[char] = True
         else:
-            charsParityIsEven[char] = False
+            chars_parity_is_even[char] = False
     
-    for isCharEven in charsParityIsEven.values():
-        if not isCharEven:
-            if canHaveCharWithoutPair:
-                canHaveCharWithoutPair = False
+    for is_char_even in chars_parity_is_even.values():
+        if not is_char_even:
+            if can_have_char_without_pair:
+                can_have_char_without_pair = False
             else:
                 return False
 

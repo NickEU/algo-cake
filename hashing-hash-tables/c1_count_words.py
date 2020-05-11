@@ -2,18 +2,18 @@
 # its word cloud data in a dictionary, where the keys
 # are words and the values are the number of times the words occurred.
 
-def count_words(inputStr):
+def count_words(input_str):
     word = ''
     delimeters = ('.', '?', '!', ':', ',', ' ', '(', ')', '"')
     result = {}
-    wordIsOver = False
-    for char in inputStr:
+    word_is_over = False
+    for char in input_str:
         if char in delimeters:
-            wordIsOver = True
+            word_is_over = True
         else:
-            if wordIsOver:
+            if word_is_over:
                 insert_word(result, word)
-                wordIsOver = False                
+                word_is_over = False                
                 word = ''
             word += char
     

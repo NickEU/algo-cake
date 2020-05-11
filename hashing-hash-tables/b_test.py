@@ -2,7 +2,7 @@ from b0_palindromes import can_turn_into_palindrome as palindrome_func0
 from b1_palindromes import can_turn_into_palindrome as palindrome_func1
 from b2_palindromes import can_turn_into_palindrome as palindrome_func2
 
-palindromesTestCases = {
+palindromes_test_cases = {
     'civic': True,
     'c': True,
     'livci': False,
@@ -13,18 +13,18 @@ palindromesTestCases = {
     'cccvv': True,
 }
 
-def runTestSuite(func):
+def run_test_suite(func):
     print('Running testsuite for:', func.__name__ )
-    allTestsHavePassed = True
-    for passed, expected in palindromesTestCases.items():
-        testPassed = func(passed) == expected
-        if not testPassed:
+    all_tests_have_passed = True
+    for passed, expected in palindromes_test_cases.items():
+        test_passed = func(passed) == expected
+        if not test_passed:
             print('Test with the following input has failed:\n', passed)
-            allTestsHavePassed = False
+            all_tests_have_passed = False
 
-    if allTestsHavePassed:
+    if all_tests_have_passed:
         print('All tests have passed!')
 
-runTestSuite(palindrome_func0)
-runTestSuite(palindrome_func1)
-runTestSuite(palindrome_func2)
+run_test_suite(palindrome_func0)
+run_test_suite(palindrome_func1)
+run_test_suite(palindrome_func2)

@@ -1,7 +1,7 @@
-# Write a function that takes an integer flightLength (in minutes)
-# and a list of integers movieLengths (in minutes)
+# Write a function that takes an integer flight_length (in minutes)
+# and a list of integers movie_lengths (in minutes)
 # and returns a boolean indicating whether there are two numbers
-# in movieLengths whose sum equals flightLength.
+# in movie_lengths whose sum equals flight_length.
 
 #When building your function:
 
@@ -9,13 +9,13 @@
 #Don’t make your users watch the same movie twice
 #Optimize for runtime over memory
 
-def movies_fit_flight(flightLength, movieLengths):
-    fittingMovieLengths = set()
+def movies_fit_flight(flight_length, movie_lengths):
+    fitting_movie_lengths = set()
     
-    for movieLen in movieLengths:
-        if movieLen in fittingMovieLengths:
+    for movie_len in movie_lengths:
+        if movie_len in fitting_movie_lengths:
             return True            
-        fittingMovieLengths.add(flightLength - movieLen)
+        fitting_movie_lengths.add(flight_length - movie_len)
     return False
     
 

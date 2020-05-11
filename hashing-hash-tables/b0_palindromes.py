@@ -3,23 +3,23 @@
 
 #You can assume the input string only contains lowercase letters.
 
-def can_turn_into_palindrome(inputStr):
-    if len(inputStr) % 2 == 1:
-        canHaveCharWithoutPair = True
+def can_turn_into_palindrome(input_str):
+    if len(input_str) % 2 == 1:
+        can_have_char_without_pair = True
     else:
-        canHaveCharWithoutPair = False
+        can_have_char_without_pair = False
 
-    charCounts = {}
-    for char in inputStr:
-        if char in charCounts:
-            charCounts[char] += 1
+    char_counts = {}
+    for char in input_str:
+        if char in char_counts:
+            char_counts[char] += 1
         else:
-            charCounts[char] = 1
+            char_counts[char] = 1
     
-    for count in charCounts.values():
+    for count in char_counts.values():
         if count % 2 == 1:
-            if canHaveCharWithoutPair:
-                canHaveCharWithoutPair = False
+            if can_have_char_without_pair:
+                can_have_char_without_pair = False
             else:
                 return False
 
