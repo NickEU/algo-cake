@@ -18,7 +18,6 @@ def count_words(input_str):
                 word = input_str[word_start_idx:word_start_idx + word_length]
                 insert_word(result, word)
                 word_length = 0
-                print(word)
     
     if word_length > 0:
         insert_word(result, input_str[word_start_idx:word_start_idx + word_length])
@@ -31,10 +30,3 @@ def insert_word(result, word):
         result[word] += 1
     else:
         result[word] = 1
-
-
-print(count_words('After beating the eggs, Dana read the next step:'))
-print(count_words("We came, we saw, we conquered...then we ate Bill's (Mille-Feuille) cake."))
-print(count_words('The bill came to five dollars.'))
-print(count_words('A good day to die'))
-print(count_words('How about a beer?'))
