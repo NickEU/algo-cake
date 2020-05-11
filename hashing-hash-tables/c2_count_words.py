@@ -5,22 +5,23 @@
 # Assume the input will only contain words and standard punctuation.
 
 def count_words(input_str):
-    word = ''
-    delimeters = ('.', '?', '!', ':', ',', ' ', '(', ')', '"')
     result = {}
-    word_is_over = False
-    for char in input_str:
-        if char in delimeters:
-            word_is_over = True
+    word_start_idx = word_length = 0
+    delimeters = ('.', '?', '!', ':', ',', ' ', '(', ')', '"')
+    for idx, char in enumerate(input_str):
+        if not char in delimeters:
+            if word_length == 0:
+                word_start_idx = idx
+            word_length += 1
         else:
-            if word_is_over:
+            if word_length != 0:
+                word = input_str[word_start_idx:word_start_idx + word_length]
                 insert_word(result, word)
-                word_is_over = False                
-                word = ''
-            word += char
+                word_length = 0
+                print(word)
     
-    if word != '':
-        insert_word(result, word)
+    if word_length > 0:
+        insert_word(result, input_str[word_start_idx:word_start_idx + word_length])
     
     return result
 
@@ -30,7 +31,6 @@ def insert_word(result, word):
         result[word] += 1
     else:
         result[word] = 1
-
 
 
 print(count_words('After beating the eggs, Dana read the next step:'))
